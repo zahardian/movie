@@ -13,7 +13,7 @@ const UpComing = () => {
   }, []);
 
   return (
-    <>
+    <div className="pt-20">
       <h1 className="uppercase text-xl font-bold text-center my-10">
         UpComing
       </h1>
@@ -40,7 +40,7 @@ const UpComing = () => {
           </Link>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

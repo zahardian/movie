@@ -13,7 +13,7 @@ const TopRated = () => {
   }, []);
 
   return (
-    <>
+    <div className="pt-20">
       <h1 className="uppercase text-xl font-bold text-center my-10">
         Top Rated
       </h1>
@@ -40,7 +40,7 @@ const TopRated = () => {
           </Link>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

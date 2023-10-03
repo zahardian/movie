@@ -11,7 +11,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <>
+    <div className="fixed z-50 bg-gray-900 w-full top-0">
       <div className="p-5 flex items-center gap-5">
         <Link to="/" className="font-bold text-xl text-orange-300 mr-10">
           Zaza Movie
@@ -44,7 +44,7 @@ const Header = () => {
           ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 };
 

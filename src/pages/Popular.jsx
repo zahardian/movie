@@ -11,8 +11,9 @@ const Popular = () => {
       .then((response) => response.json())
       .then((data) => setPopularMovies(data.results));
   }, []);
+
   return (
-    <>
+    <div className="pt-20">
       <h1 className="uppercase text-xl font-bold text-center my-10">Popular</h1>
       <div className="grid grid-cols-2 lg:grid-cols-5 md:grid-cols-3 min-h-screen items-center justify-center gap-2 lg:mx-20 md:mx-20 mx-5">
         {popularMovies.map((popular) => (
@@ -37,7 +38,7 @@ const Popular = () => {
           </Link>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
