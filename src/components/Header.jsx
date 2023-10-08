@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   let links = [
-    { name: "Popular", tag: "/popular" },
-    { name: "Top Rated", tag: "/toprated" },
-    { name: "Upcoming", tag: "/upcoming" },
+    { id: 1, name: "Popular", tag: "/popular" },
+    { id: 2, name: "Top Rated", tag: "/toprated" },
+    { id: 3, name: "Upcoming", tag: "/upcoming" },
   ];
 
   const [open, setOpen] = useState(false);
@@ -37,9 +37,7 @@ const Header = () => {
               key={link.name}
               className="cursor-pointer hover:text-indigo-600"
             >
-              <Link smooth={true} to={link.tag}>
-                {link.name}
-              </Link>
+              <Link to={link.tag}>{link.name}</Link>
             </li>
           ))}
         </ul>

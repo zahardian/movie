@@ -23,19 +23,19 @@ const Detail = () => {
   return (
     <div>
       <img
-        className="h-96 w-[1050px] object-cover mx-auto rounded"
+        className="h-[515px] w-[1250px] object-cover mx-auto rounded"
         src={`https://image.tmdb.org/t/p/original${
           currentMovieDetail ? currentMovieDetail.backdrop_path : ""
         }`}
       />
-      <div className="absolute top-80 md:top-64 md:flex mx-4 md:mx-36 gap-5">
+      <div className="absolute top-80 md:top-72 md:flex mx-4 md:mx-10 lg:mx-44 gap-5">
         <img
-          className="md:w-72 md:h-80 w-60 h-72 rounded-xl object-cover"
+          className="md:w-72 md:h-96 w-60 h-72 rounded-xl object-cover"
           src={`https://image.tmdb.org/t/p/original${
             currentMovieDetail ? currentMovieDetail.poster_path : ""
           }`}
         />
-        <div className="w-96">
+        <div className="w-96 pt-10 md:pt-0">
           <div className="text-3xl md:text-4xl font-bold">
             {currentMovieDetail ? currentMovieDetail.original_title : ""}
           </div>
