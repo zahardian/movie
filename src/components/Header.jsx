@@ -37,7 +37,9 @@ const Header = () => {
               key={link.name}
               className="cursor-pointer hover:text-indigo-600"
             >
-              <Link to={link.tag}>{link.name}</Link>
+              <Link to={link.tag} onClick={() => setOpen(!open)}>
+                {link.name}
+              </Link>
             </li>
           ))}
         </ul>
