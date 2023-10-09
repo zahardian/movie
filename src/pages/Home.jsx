@@ -40,7 +40,7 @@ const Home = () => {
                 src={`https://image.tmdb.org/t/p/original/${
                   cover && cover.backdrop_path
                 }`}
-                className="object-cover h-[525px] mix-blend-overlay"
+                className="object-cover h-[550px] md:h-[650px] mix-blend-overlay"
               />
               <div className="absolute top-60 text-left md:px-20 px-5 space-y-5">
                 <p className="font-bold text-4xl md:text-5xl">{cover.title}</p>
@@ -50,14 +50,14 @@ const Home = () => {
             </div>
           ))}
         </Carousel>
-        <h1 className="uppercase text-xl font-bold text-center my-10">
+        <h1 className="uppercase text-xl font-bold text-center my-20">
           Popular
         </h1>
-        <div className="grid grid-cols-2 lg:grid-cols-5 md:grid-cols-3 min-h-screen items-center justify-center gap-2 lg:mx-20 md:mx-20 mx-5">
+        <div className="grid grid-cols-2 lg:grid-cols-5 md:grid-cols-3 min-h-screen items-center justify-center gap-2 lg:mx-20 md:mx-20 mx-5 mb-20">
           {popularMovies.map((popular) => (
             <Link key={popular.id} to={`/details/${popular.id}`}>
               <div className="group relative items-center justify-center overflow-hidden cursor-pointer rounded-md">
-                <div className="h-72 w-full">
+                <div className="h-60 md:h-96 w-full">
                   <img
                     className="h-full w-full object-cover group-hover:rotate-0 group-hover:scale-125 transition-transform duration-700"
                     src={`https://image.tmdb.org/t/p/original/${

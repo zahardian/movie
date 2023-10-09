@@ -17,11 +17,11 @@ const UpComing = () => {
       <h1 className="uppercase text-xl font-bold text-center my-10">
         UpComing
       </h1>
-      <div className="grid grid-cols-2 lg:grid-cols-5 md:grid-cols-3 min-h-screen items-center justify-center gap-2 lg:mx-20 md:mx-20 mx-5">
+      <div className="grid grid-cols-2 lg:grid-cols-5 md:grid-cols-3 min-h-screen items-center justify-center gap-2 lg:mx-20 md:mx-20 mx-5 mb-20">
         {upComingMovies.map((upComing) => (
           <Link key={upComing.id} to={`/details/${upComing.id}`}>
             <div className="group relative items-center justify-center overflow-hidden cursor-pointer rounded-md">
-              <div className="h-72 w-full">
+              <div className="h-60 md:h-96 w-full">
                 <img
                   className="h-full w-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-700"
                   src={`https://image.tmdb.org/t/p/original/${
