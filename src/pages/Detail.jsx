@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
@@ -35,7 +35,7 @@ const Detail = () => {
             currentMovieDetail ? currentMovieDetail.poster_path : ""
           }`}
         />
-        <div className="w-96 pt-10 md:pt-0">
+        <div className="w-full pt-10 md:pt-0">
           <div className="text-3xl md:text-4xl font-bold">
             {currentMovieDetail ? currentMovieDetail.original_title : ""}
           </div>
@@ -78,6 +78,36 @@ const Detail = () => {
           <p className="text-xl font-bold">Synopsis</p>
           <div className="text-sm">
             {currentMovieDetail ? currentMovieDetail.overview : ""}
+          </div>
+          <div className="flex gap-5 md:gap-10 mt-10">
+            {currentMovieDetail && currentMovieDetail.homepage && (
+              <Link
+                className="bg-red-600 text-black font-bold text-sm rounded-full py-2 px-10 w-32 md:w-44"
+                to={currentMovieDetail.homepage}
+                target="_blank"
+                style={{ textDecoration: "none" }}
+              >
+                <p>
+                  <span className="flex gap-5 items-center justify-center">
+                    Homepage <i className="newTab fas fa-external-link-alt"></i>
+                  </span>
+                </p>
+              </Link>
+            )}
+            {currentMovieDetail && currentMovieDetail.imdb_id && (
+              <Link
+                className="bg-yellow-400 text-black font-bold text-sm rounded-full py-2 px-10 w-32 md:w-44"
+                to={"https://www.imdb.com/title/" + currentMovieDetail.imdb_id}
+                target="_blank"
+                style={{ textDecoration: "none" }}
+              >
+                <p>
+                  <span className="flex gap-5 items-center justify-center">
+                    IMDb<i className="newTab fas fa-external-link-alt"></i>
+                  </span>
+                </p>
+              </Link>
+            )}
           </div>
         </div>
       </div>
