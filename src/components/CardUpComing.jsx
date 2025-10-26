@@ -1,15 +1,9 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useCardUpComing from "../hooks/useCardUpComing";
 
 export default function CardUpComing() {
-  const [upComingMovies, setUpComingMovies] = useState([]);
-  useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/movie/upcoming?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US"
-    )
-      .then((response) => response.json())
-      .then((data) => setUpComingMovies(data.results));
-  }, []);
+  const { upComingMovies } = useCardUpComing();
+
   return (
     <>
       <div className="grid grid-cols-2 lg:grid-cols-5 md:grid-cols-3 min-h-screen items-center justify-center gap-2 lg:mx-20 md:mx-20 mx-5 mb-20">

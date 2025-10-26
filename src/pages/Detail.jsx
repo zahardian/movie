@@ -1,24 +1,10 @@
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import useDetail from "../hooks/useDetail";
 
 const Detail = () => {
-  const [currentMovieDetail, setMovie] = useState();
-  const { id } = useParams();
-
-  useEffect(() => {
-    getData();
-    window.scrollTo(0, 0);
-  }, []);
-
-  const getData = () => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`
-    )
-      .then((res) => res.json())
-      .then((data) => setMovie(data));
-  };
+  const { currentMovieDetail } = useDetail();
 
   return (
     <div>
@@ -64,14 +50,12 @@ const Detail = () => {
           <div className="mb-10 mt-5">
             {currentMovieDetail && currentMovieDetail.genres
               ? currentMovieDetail.genres.map((genre) => (
-                  <>
-                    <span
-                      className="border-2 rounded-full p-2 mr-2 text-sm"
-                      id={genre.id}
-                    >
-                      {genre.name}
-                    </span>
-                  </>
+                  <span
+                    key={genre.id}
+                    className="border-2 rounded-full p-2 mr-2 text-sm"
+                  >
+                    {genre.name}
+                  </span>
                 ))
               : ""}
           </div>

@@ -1,14 +1,8 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import useHeader from "../hooks/useHeader";
 
 const Header = () => {
-  let links = [
-    { id: 1, name: "Popular", tag: "/popular" },
-    { id: 2, name: "Top Rated", tag: "/toprated" },
-    { id: 3, name: "Upcoming", tag: "/upcoming" },
-  ];
-
-  const [open, setOpen] = useState(false);
+  const { links, open, toggleMenu } = useHeader();
 
   return (
     <div className="fixed z-50 bg-gray-900 w-full top-0">
@@ -25,7 +19,7 @@ const Header = () => {
         ))}
       </div>
       <div
-        onClick={() => setOpen(!open)}
+        onClick={toggleMenu}
         className="md:hidden cursor-pointer text-xl absolute right-8 top-5 text-white"
       >
         <ion-icon name={open ? "close" : "menu"}></ion-icon>
@@ -37,7 +31,7 @@ const Header = () => {
               key={link.name}
               className="cursor-pointer hover:text-indigo-600"
             >
-              <Link to={link.tag} onClick={() => setOpen(!open)}>
+              <Link to={link.tag} onClick={toggleMenu}>
                 {link.name}
               </Link>
             </li>
